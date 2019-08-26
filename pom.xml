@@ -3,13 +3,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
-    <modules>
-        <module>provider</module>
-    </modules>
+
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.7.RELEASE</version>
+        <version>2.1.6.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>person.pulei.myshop.plus</groupId>
@@ -28,6 +26,11 @@
         <alibaba-spring-context-support.version>1.0.2</alibaba-spring-context-support.version>
     </properties>
 
+    <modules>
+        <module>provider</module>
+        <module>business</module>
+        <module>commons</module>
+    </modules>
 
     <dependencyManagement>
         <dependencies>
