@@ -24,7 +24,7 @@ import javax.annotation.Resource;
 @CrossOrigin(origins = "*",maxAge = 3600)
 public class RegController {
 
-    @Reference
+    @Reference(version = "1.0.0")
     private UmsAdminService umsAdminService;
 
     @PostMapping("")
