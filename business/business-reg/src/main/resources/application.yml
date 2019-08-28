@@ -12,13 +12,13 @@ spring:
         server-addr: 123.207.111.152:8848
 dubbo:
   scan:
-    base-packages: person.pulei.myshop.plus.business.controller
+    base-packages: person.pulei.myshopplus.business.controller
   protocol:
     name: dubbo
     port: -1
     serialization: kryo
   registry:
-    address: http://123.207.111.152
+    address: nacos://123.207.111.152
     port: 8848
 server:
   # ${random.int[9000,9999]} 随机端口

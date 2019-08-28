@@ -2,16 +2,25 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <parent>
-        <artifactId>business</artifactId>
-        <groupId>person.pulei.myshop.plus</groupId>
-        <version>0.0.1-SNAPSHOT</version>
-    </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>person.pulei.myshop.plus</groupId>
+    <parent>
+        <artifactId>business</artifactId>
+        <groupId>person.pulei.myshopplus</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
+    <groupId>person.pulei.myshopplus</groupId>
     <artifactId>business-reg</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <licenses>
+        <license>
+            <name>Apache 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
 
     <dependencies>
         <!-- Spring Boot Begin -->
@@ -87,18 +96,13 @@
         <!-- Apache Dubbo End -->
         <!-- Projects Begin -->
         <dependency>
-            <groupId>person.pulei.myshop.plus</groupId>
+            <groupId>person.pulei.myshopplus</groupId>
             <artifactId>commons-dto</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
         <dependency>
-            <groupId>person.pulei.myshop.plus</groupId>
-            <artifactId>commons-dto</artifactId>
-            <version>${project.parent.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>person.pulei.myshop.plus</groupId>
-            <artifactId>user-provider-api</artifactId>
+            <groupId>person.pulei.myshopplus</groupId>
+            <artifactId>ums-admin-provider-api</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
         <!-- Projects End -->
@@ -109,7 +113,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>person.pulei.myshop.plus.business.BusinessRegApplication</mainClass>
+                    <mainClass>com.funtl.myshop.plus.business.BusinessRegApplication</mainClass>
                 </configuration>
             </plugin>
         </plugins>

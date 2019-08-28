@@ -3,13 +3,14 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/business/business.iml" filepath="$PROJECT_DIR$/business/business.iml" />
+      <module fileurl="file://$PROJECT_DIR$/business/business-oauth2/business-oauth2.iml" filepath="$PROJECT_DIR$/business/business-oauth2/business-oauth2.iml" />
       <module fileurl="file://$PROJECT_DIR$/business/business-reg/business-reg.iml" filepath="$PROJECT_DIR$/business/business-reg/business-reg.iml" />
       <module fileurl="file://$PROJECT_DIR$/commons/commons.iml" filepath="$PROJECT_DIR$/commons/commons.iml" />
       <module fileurl="file://$PROJECT_DIR$/commons/commons-dto/commons-dto.iml" filepath="$PROJECT_DIR$/commons/commons-dto/commons-dto.iml" />
-      <module fileurl="file://$PROJECT_DIR$/myshopplus.iml" filepath="$PROJECT_DIR$/myshopplus.iml" />
+      <module fileurl="file://$PROJECT_DIR$/myshop-plus.iml" filepath="$PROJECT_DIR$/myshop-plus.iml" />
       <module fileurl="file://$PROJECT_DIR$/provider/provider.iml" filepath="$PROJECT_DIR$/provider/provider.iml" />
-      <module fileurl="file://$PROJECT_DIR$/provider/user-provider-api/user-provider-api.iml" filepath="$PROJECT_DIR$/provider/user-provider-api/user-provider-api.iml" />
-      <module fileurl="file://$PROJECT_DIR$/provider/user-provider-service/user-provider-service.iml" filepath="$PROJECT_DIR$/provider/user-provider-service/user-provider-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/provider/ums-admin-provider-api/ums-admin-provider-api.iml" filepath="$PROJECT_DIR$/provider/ums-admin-provider-api/ums-admin-provider-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/provider/ums-admin-provider-service/ums-admin-provider-service.iml" filepath="$PROJECT_DIR$/provider/ums-admin-provider-service/ums-admin-provider-service.iml" />
     </modules>
   </component>
 </project>

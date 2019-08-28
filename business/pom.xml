@@ -5,17 +5,18 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <artifactId>myshopplus</artifactId>
-        <groupId>person.pulei.myshop.plus</groupId>
+        <artifactId>myshop-plus</artifactId>
+        <groupId>person.pulei.myshopplus</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-
-    <groupId>person.pulei.myshop.plus</groupId>
+    <groupId>person.pulei.myshopplus</groupId>
     <artifactId>business</artifactId>
-    <packaging>pom</packaging>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
     <modules>
         <module>business-reg</module>
+        <module>business-oauth2</module>
     </modules>
 
 

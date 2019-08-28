@@ -1,0 +1,13 @@
+package person.pulei.myshopplus.provider;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import tk.mybatis.spring.annotation.MapperScan;
+
+@SpringBootApplication
+@MapperScan(basePackages = "person.pulei.myshopplus.provider.mapper")
+public class UmsAdminProviderApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(UmsAdminProviderApplication.class, args);
+    }
+}
