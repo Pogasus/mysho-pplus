@@ -12,7 +12,7 @@ spring:
         server-addr: 123.207.111.152:8848
 dubbo:
   scan:
-    base-packages: person.pulei.myshopplus.business.controller
+    base-packages: person.pulei.myshopplus.business.controller, person.pulei.myshopplus.business.service
   protocol:
     name: dubbo
     port: -1
@@ -26,3 +26,16 @@ management:
     web:
       exposure:
         include: "*"
+
+# 开启 Feign 的 OKHttp 方式
+feign:
+  okhttp:
+    enabled: true
+  httpclient:
+    enabled: false
+
+business:
+  oauth2:
+    grant_type: password
+    client_id: client
+    client_secret: secret

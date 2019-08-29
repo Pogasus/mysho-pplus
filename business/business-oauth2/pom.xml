@@ -15,6 +15,11 @@
     <dependencies>
         <!-- Spring Boot Begin -->
         <dependency>
+            <groupId>org.springframework.security.oauth</groupId>
+            <artifactId>spring-security-oauth2</artifactId>
+            <version>2.3.6.RELEASE</version>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
@@ -88,6 +93,16 @@
             </exclusions>
         </dependency>
         <!-- Apache Dubbo End -->
+        <!-- Commons Begin -->
+        <dependency>
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>okhttp</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.github.openfeign</groupId>
+            <artifactId>feign-okhttp</artifactId>
+        </dependency>
+        <!-- Commons End -->
         <!-- Projects Begin -->
         <dependency>
             <groupId>person.pulei.myshopplus</groupId>
@@ -100,11 +115,23 @@
             <version>${project.parent.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.springframework.security.oauth</groupId>
-            <artifactId>spring-security-oauth2</artifactId>
-            <version>2.3.6.RELEASE</version>
+            <groupId>person.pulei.myshopplus</groupId>
+            <artifactId>business-profile-feign</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>person.pulei.myshopplus</groupId>
+            <artifactId>commons-utils</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>person.pulei.myshopplus</groupId>
+            <artifactId>configuration-feign</artifactId>
+            <version>${project.parent.version}</version>
         </dependency>
         <!-- Projects End -->
+
+
     </dependencies>
 
     <build>

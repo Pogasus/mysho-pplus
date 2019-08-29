@@ -19,7 +19,6 @@ import person.pulei.myshopplus.provider.domain.UmsAdmin;
  */
 @RestController
 @RequestMapping("reg")
-@CrossOrigin(origins = "*",maxAge = 3600)
 public class RegController {
 
     @Reference(version = "1.0.0")

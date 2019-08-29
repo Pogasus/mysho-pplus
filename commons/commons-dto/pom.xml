@@ -15,13 +15,6 @@
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <developers>
-        <developer>
-            <id>liwemin</id>
-            <name>Lusifer Lee</name>
-            <email>lee.lusifer@gmail.com</email>
-        </developer>
-    </developers>
     <dependencies>
         <dependency>
             <groupId>org.projectlombok</groupId>

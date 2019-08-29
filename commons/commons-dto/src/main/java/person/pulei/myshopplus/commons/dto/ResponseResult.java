@@ -115,4 +115,28 @@ public class ResponseResult<T> implements Serializable {
         }
         return true;
     }
+
+    public class CodeStatus {
+        /**
+         * 成功
+         */
+        public static final int OK = 20000;
+        /**
+         * 失败
+         */
+        public static final int FAIL = 50000;
+        /**
+         * 非法token
+         */
+        public static final int ILLEGAL_TOKEN = 50008;
+        /**
+         * 其他账号已登录
+         */
+        public static final int OTHER_CLIENTS_LOGGED_IN = 50012;
+        /**
+         * token超时
+         */
+        public static final int TOKEN_EXPIRED = 50014;
+    }
+
 }

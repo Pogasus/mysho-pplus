@@ -6,6 +6,8 @@
         <module>provider</module>
         <module>business</module>
         <module>commons</module>
+        <module>configuration</module>
+        <module>gateway</module>
     </modules>
 
     <parent>
@@ -23,6 +25,17 @@
     <description>Demo project for Spring Boot</description>
 
     <properties>
+        <java.version>1.8</java.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+        <!--Commons-->
+        <okHttp3.version>4.0.1</okHttp3.version>
+        <feign-okhttp.version>10.2.3</feign-okhttp.version>
+
+        <!--Native cloud-->
         <dubbo.version>2.7.2</dubbo.version>
         <dubbo-kryo.version>2.7.2</dubbo-kryo.version>
         <dubbo-actuator.version>2.7.1</dubbo-actuator.version>
@@ -116,8 +129,138 @@
                 <artifactId>mapper-spring-boot-starter</artifactId>
                 <version>${spring-boot-mapper.version}</version>
             </dependency>
+            <!--Commons start-->
+            <dependency>
+                <groupId>com.squareup.okhttp3</groupId>
+                <artifactId>okhttp</artifactId>
+                <version>${okHttp3.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.github.openfeign</groupId>
+                <artifactId>feign-okhttp</artifactId>
+                <version>${feign-okhttp.version}</version>
+            </dependency>
+            <!--Commons end-->
         </dependencies>
     </dependencyManagement>
+
+    <profiles>
+        <profile>
+            <id>default</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <spring-javaformat.version>0.0.12</spring-javaformat.version>
+            </properties>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>io.spring.javaformat</groupId>
+                        <artifactId>spring-javaformat-maven-plugin</artifactId>
+                        <version>${spring-javaformat.version}</version>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <version>3.0.0-M3</version>
+                        <configuration>
+                            <!-- 设置默认跳过测试 -->
+                            <skip>true</skip>
+                            <includes>
+                                <include>**/*Tests.java</include>
+                            </includes>
+                            <excludes>
+                                <exclude>**/Abstract*.java</exclude>
+                            </excludes>
+                            <systemPropertyVariables>
+                                <java.security.egd>file:/dev/./urandom</java.security.egd>
+                                <java.awt.headless>true</java.awt.headless>
+                            </systemPropertyVariables>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-enforcer-plugin</artifactId>
+                        <version>1.4.1</version>
+                        <executions>
+                            <execution>
+                                <id>enforce-rules</id>
+                                <goals>
+                                    <goal>enforce</goal>
+                                </goals>
+                                <configuration>
+                                    <rules>
+                                        <bannedDependencies>
+                                            <excludes>
+                                                <exclude>commons-logging:*:*</exclude>
+                                            </excludes>
+                                            <searchTransitive>true</searchTransitive>
+                                        </bannedDependencies>
+                                    </rules>
+                                    <fail>true</fail>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-install-plugin</artifactId>
+                        <configuration>
+                            <skip>true</skip>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <configuration>
+                            <skip>true</skip>
+                        </configuration>
+                        <inherited>true</inherited>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
+
+    <repositories>
+        <repository>
+            <id>spring-milestone</id>
+            <name>Spring Milestone</name>
+            <url>https://repo.spring.io/milestone</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>spring-snapshot</id>
+            <name>Spring Snapshot</name>
+            <url>https://repo.spring.io/snapshot</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>spring-milestone</id>
+            <name>Spring Milestone</name>
+            <url>https://repo.spring.io/milestone</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+        <pluginRepository>
+            <id>spring-snapshot</id>
+            <name>Spring Snapshot</name>
+            <url>https://repo.spring.io/snapshot</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
+
 
     <build>
         <plugins>
