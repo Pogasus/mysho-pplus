@@ -105,6 +105,7 @@ public class LoginController {
             UmsAdmin umsAdmin = MapperUtils.json2pojoByTree(jsonInfo, "data", UmsAdmin.class);
             loginInfo.setName(umsAdmin.getUsername());
             loginInfo.setAvatar(umsAdmin.getIcon());
+            loginInfo.setNickName(umsAdmin.getNickName());
         } catch (Exception e) {
             e.printStackTrace();
         }

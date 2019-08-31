@@ -13,5 +13,6 @@ public class LoginInfo {
 
     private String name;
     private String avatar;
+    private String nickName;
 
 }
